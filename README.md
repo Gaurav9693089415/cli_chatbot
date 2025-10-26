@@ -5,7 +5,7 @@
 
 A fully functional **local chatbot interface** built in Python using the Hugging Face `transformers` library. It runs a small, modern language model locally to maintain coherent, multi-turn conversations without any APIs.
 
-This project was built to satisfy the **ATG Machine Learning Intern Technical Assignment**.
+
 ---
 
 ##  Demo Video
