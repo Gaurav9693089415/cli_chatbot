@@ -6,7 +6,14 @@
 A fully functional **local chatbot interface** built in Python using the Hugging Face `transformers` library. It runs a small, modern language model locally to maintain coherent, multi-turn conversations without any APIs.
 
 This project was built to satisfy the **ATG Machine Learning Intern Technical Assignment**.
+---
 
+##  Demo Video
+
+ **Watch the full working demo here:**  
+ [Click to View on Google Drive](https://drive.google.com/file/d/1x_clJwC3SlTmh02QT2EtfpNCz6rll_PU/view?usp=sharing)
+
+---
 ##  Features
 
   * **100% Local Inference:** Runs entirely on your machine.
@@ -111,12 +118,13 @@ Exiting chatbot. Goodbye!
 ##  Project Structure
 
 ```
-your_project_directory/
-├── model_loader.py       # Handles loading the model & tokenizer (Auto-detects GPU)
-├── chat_memory.py        # Manages the sliding window memory using deque
-├── cli_interface.py      # The main application script with the chat loop
-├── requirements.txt      # Project dependencies
-└── README.md             # You are here
+cli_chatbot/
+├── model_loader.py       # Handles model & tokenizer loading
+├── chat_memory.py        # Manages conversation memory
+├── cli_interface.py      # Main chat interface and loop
+├── requirements.txt      # Dependencies
+├── demo_screenshot.png   # Project demo image
+└── README.md
 ```
 
 -----
