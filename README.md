@@ -26,7 +26,7 @@ A fully functional **local chatbot interface** built in Python using the Hugging
 ### 1\. Clone the Project
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Gaurav9693089415/cli_chatbot.git
 cd <your-project-directory>
 ```
 
