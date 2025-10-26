@@ -13,8 +13,11 @@ A fully functional **local chatbot interface** built in Python using the Hugging
  **Watch the full working demo here:**  
  [Click to View on Google Drive](https://drive.google.com/file/d/1x_clJwC3SlTmh02QT2EtfpNCz6rll_PU/view?usp=sharing)
  
- ![Chatbot Demo](./demo_screenshot.png)
+ 
 ---
+
+
+![Chatbot Demo](./demo_screenshot.png)
 ##  Features
 
   * **100% Local Inference:** Runs entirely on your machine.
