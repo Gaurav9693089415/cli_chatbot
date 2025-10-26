@@ -115,7 +115,7 @@ your_project_directory/
 ├── chat_memory.py        # Manages the sliding window memory using deque
 ├── cli_interface.py      # The main application script with the chat loop
 ├── requirements.txt      # Project dependencies
-└── README.md             # You are here
+└── README.md             
 ```
 
 -----
