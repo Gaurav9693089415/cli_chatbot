@@ -3,7 +3,7 @@
 
 ##  **Final Updated README.md**
 
-````markdown
+```
 # Local Command-Line Chatbot (Hugging Face)
 
 ![Chatbot Demo](./demo_screenshot.png)
