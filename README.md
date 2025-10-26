@@ -8,6 +8,13 @@ A fully functional **local chatbot interface** built in Python using the Hugging
 
 ---
 
+---
+
+### 🧠 **Explanation:**
+- The line  
+  ```markdown
+  ![Chatbot Demo Screenshot](./demo_screenshot.png)
+
 ##  Demo Video
 
  **Watch the full working demo here:**  
