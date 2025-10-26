@@ -5,11 +5,10 @@
 
 A fully functional **local chatbot interface** built in Python using the Hugging Face `transformers` library. It runs a small, modern language model locally to maintain coherent, multi-turn conversations without any APIs.
 
-This project was built to satisfy the **ATG Machine Learning Intern Technical Assignment**.
 
 ##  Features
 
-  * **100% Local Inference:** Runs entirely on your machine.
+  * **100% Local Inference:** Runs entirely on  machine.
   * **Auto-Detects Hardware:** Automatically uses your NVIDIA GPU (CUDA) for acceleration if available, otherwise falls back to CPU.
   * **Modern Chat Model:** Uses `TinyLlama/TinyLlama-1.1B-Chat-v1.0`, a small but powerful model that is both **factual** (knows capitals) and **conversational** (understands follow-up questions).
   * **Robust Context Management:** Uses the official `tokenizer.apply_chat_template` method to perfectly format conversational history, which is far more reliable than manual string building.
@@ -116,7 +115,7 @@ your_project_directory/
 ├── chat_memory.py        # Manages the sliding window memory using deque
 ├── cli_interface.py      # The main application script with the chat loop
 ├── requirements.txt      # Project dependencies
-└── README.md             # You are here
+└── README.md             
 ```
 
 -----
