@@ -9,7 +9,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 
 
-def load_chat_model(model_name: str = "Qwen/Qwen1.5-1.8B-Chat", device: str = None):
+def load_chat_model(model_name: str = "TinyLlama/TinyLlama-1.1B-Chat-v1.0", device: str = None):
     """
     Load a Hugging Face text generation model and tokenizer.
     
@@ -56,8 +56,8 @@ def load_chat_model(model_name: str = "Qwen/Qwen1.5-1.8B-Chat", device: str = No
 
 if __name__ == "__main__":
     # Test model loading
-    print("Testing Qwen 1.5 model loader...\n")
-    model, tokenizer, device = load_chat_model("Qwen/Qwen1.5-1.8B-Chat")
+    print("Testing TinyLlama 1.1B model loader...\n")
+    model, tokenizer, device = load_chat_model("TinyLlama/TinyLlama-1.1B-Chat-v1.0")
     print(f"✓ Model loaded successfully on {device.upper()}")
     print(f"Model type: {type(model)}")
     print(f"PAD token: {tokenizer.pad_token}")
