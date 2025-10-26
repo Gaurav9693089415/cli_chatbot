@@ -1,51 +1,66 @@
 
------
+---
 
+##  **Final Updated README.md**
+
+````markdown
 # Local Command-Line Chatbot (Hugging Face)
 
-A fully functional **local chatbot interface** built in Python using the Hugging Face `transformers` library. It runs a small, modern language model locally to maintain coherent, multi-turn conversations without any APIs.
+![Chatbot Demo](./demo_screenshot.png)
 
+A fully functional **local chatbot interface** built in Python using the Hugging Face `transformers` library.  
+It runs a small, modern language model locally to maintain coherent, multi-turn conversations — without using any APIs or internet connection.
+
+---
+
+##  Demo Video
+
+ **Watch the full working demo here:**  
+ [Click to View on Google Drive](https://drive.google.com/file/d/1x_clJwC3SlTmh02QT2EtfpNCz6rll_PU/view?usp=sharing)
+
+---
 
 ##  Features
 
-  * **100% Local Inference:** Runs entirely on  machine.
-  * **Auto-Detects Hardware:** Automatically uses your NVIDIA GPU (CUDA) for acceleration if available, otherwise falls back to CPU.
-  * **Modern Chat Model:** Uses `TinyLlama/TinyLlama-1.1B-Chat-v1.0`, a small but powerful model that is both **factual** (knows capitals) and **conversational** (understands follow-up questions).
-  * **Robust Context Management:** Uses the official `tokenizer.apply_chat_template` method to perfectly format conversational history, which is far more reliable than manual string building.
-  * **Sliding Window Memory:** Remembers the last 5 turns of conversation using an efficient `deque` collection.
-  * **Modular Code:** Organized as required by the assignment:
-      * `model_loader.py`
-      * `chat_memory.py`
-      * `cli_interface.py` (your main file)
-  * **CLI Commands:** Includes `/exit`, `/help`, `/history`, and `/clear` for full control.
+- **100% Local Inference:** Runs entirely on your own machine — no API calls.
+- **Auto-Detects Hardware:** Automatically uses your NVIDIA GPU (CUDA) if available; otherwise falls back to CPU.
+- **Modern Chat Model:** Uses `TinyLlama/TinyLlama-1.1B-Chat-v1.0`, a small but powerful model that is both **factual** and **conversational**.
+- **Robust Context Management:** Utilizes Hugging Face’s `tokenizer.apply_chat_template()` to properly format conversation history.
+- **Sliding Window Memory:** Remembers the last 5 turns of conversation using a `deque` collection.
+- **Modular Codebase:**
+  - `model_loader.py` → Loads model & tokenizer, auto-detects GPU/CPU.
+  - `chat_memory.py` → Manages recent chat history efficiently.
+  - `cli_interface.py` → Main file for running the chatbot.
+- **Built-in CLI Commands:**
+  `/exit`, `/help`, `/history`, `/clear` for complete chat control.
 
------
+---
 
 ##  Installation & Setup
 
-### 1\. Clone the Project
+### 1️ Clone the Repository
 
 ```bash
 git clone https://github.com/Gaurav9693089415/cli_chatbot.git
-cd <your-project-directory>
-```
+cd cli_chatbot
+````
 
-### 2\. Create and Activate a Virtual Environment
+### 2️ Create and Activate Virtual Environment
 
 ```bash
-# Create the environment
+# Create virtual environment
 python -m venv myenv
 
+# Activate it
 # On Windows
 myenv\Scripts\activate
-
 # On macOS/Linux
 source myenv/bin/activate
 ```
 
-### 3\. Create `requirements.txt`
+### 3️ Install Dependencies
 
-Create a file named `requirements.txt` and add the following libraries:
+Create a file named `requirements.txt` and add:
 
 ```txt
 transformers>=4.35.0
@@ -54,33 +69,27 @@ sentencepiece
 accelerate
 ```
 
-### 4\. Install Dependencies
-
-Install the required libraries from your `requirements.txt` file.
+Then install them:
 
 ```bash
 pip install -r requirements.txt
 ```
 
------
+---
 
 ##  How to Run
 
-The script will **automatically detect and use your GPU** (CUDA) if one is available.
-
-Simply run the main interface file:
+The script automatically detects your hardware and uses GPU if available.
 
 ```bash
 python cli_interface.py
 ```
 
------
+---
 
 ##  Example Interaction
 
-The bot successfully handles multi-turn, context-aware, factual questions.
-
-```
+```bash
 ============================================================
  LOCAL COMMAND-LINE CHATBOT
 ============================================================
@@ -105,23 +114,55 @@ User: /exit
 Exiting chatbot. Goodbye!
 ```
 
------
+---
 
 ##  Project Structure
 
 ```
-your_project_directory/
-├── model_loader.py       # Handles loading the model & tokenizer (Auto-detects GPU)
-├── chat_memory.py        # Manages the sliding window memory using deque
-├── cli_interface.py      # The main application script with the chat loop
-├── requirements.txt      # Project dependencies
-└── README.md             
+cli_chatbot/
+├── model_loader.py       # Handles model & tokenizer loading
+├── chat_memory.py        # Manages conversation memory
+├── cli_interface.py      # Main chat interface and loop
+├── requirements.txt      # Dependencies
+├── demo_screenshot.png   # Project demo image
+└── README.md
 ```
 
------
+---
 
 ##  Design Decisions
 
-  * **Model:** `TinyLlama/TinyLlama-1.1B-Chat-v1.0` was chosen as the ideal model. It is small enough to run on consumer hardware (like a GTX 1650 with 4GB VRAM) while being a modern, instruction-tuned chat model. This solves the trade-off between older models that were either factual *or* conversational, but rarely both.
-  * **Context Management:** The `tokenizer.apply_chat_template` method is the core of the chat logic. This is the modern, official Hugging Face standard for formatting conversation history. It dynamically builds the correct prompt string (e.g., `<|user|>\n...<|assistant|>\n...`) for the specific model, which is why the bot can correctly infer the context of "And what about Italy?".
-  * **Efficiency:** The model is loaded in `float16` (half-precision) on CUDA devices to reduce VRAM usage and speed up inference. The chat memory uses a `deque` with a fixed `maxlen` for an efficient sliding window.
+* **Model Choice:**
+  `TinyLlama/TinyLlama-1.1B-Chat-v1.0` was selected because it’s small, fast, and instruction-tuned — ideal for local systems with limited VRAM while maintaining conversational accuracy.
+
+* **Context Management:**
+  The `tokenizer.apply_chat_template()` method dynamically formats the prompt for multi-turn conversations, allowing smooth follow-up question handling like “And what about Italy?”.
+
+* **Efficiency:**
+  Model is loaded in `float16` precision (FP16) on GPU to reduce VRAM usage and improve speed.
+  Chat memory uses a fixed-length `deque` for efficient sliding-window context management.
+
+---
+
+##  Example Explanation for Demo (Optional)
+
+> “I chose TinyLlama because it’s a small, fast, and modern chat model that runs locally on normal hardware while still giving accurate, conversational answers.”
+
+---
+
+##  License
+
+This project is open-source and available under the **MIT License**.
+
+---
+
+##  Author
+
+**Gaurav Kumar**
+GitHub: [@Gaurav9693089415](https://github.com/Gaurav9693089415)
+
+````
+
+
+
+
